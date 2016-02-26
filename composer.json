@@ -1,0 +1,8 @@
+{
+    "name": "void-main/FnPHP",
+    "autoload": {
+        "psr-0" : {
+            "VoidMain\\FnPHP" : "src"
+        }
+    }
+}

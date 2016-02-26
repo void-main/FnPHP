@@ -1,5 +1,5 @@
 <?php
-require_once('func.php');
+require_once('../src/Core/func.php');
 
 // $sayJames = partial(function ($a, $b) {
 //     return "Hi, I'm $a $b\n";
@@ -10,7 +10,7 @@ require_once('func.php');
 function testFunc ($a, $b, $c) {
     echo "$a $b $c\n";
 };
-$curriedTestFunc = curry("testFunc");
+$curriedTestFunc = VoidMain\FnPHP\curry("testFunc");
 $say = $curriedTestFunc("say");
 $sayHello = $say("hello");
 $sayHello("world");

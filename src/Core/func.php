@@ -1,5 +1,9 @@
 <?php
 
+namespace VoidMain\FnPHP;
+
+use \ReflectionFunction;
+
 function partial() {
     $args = func_get_args();
     $fn = array_shift($args);
