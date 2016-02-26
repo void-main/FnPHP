@@ -1,5 +1,5 @@
 {
-  "name" : "void-main/FnPHP",
+  "name" : "void-main/fn-php",
   "description" : "Yet another function programming package for PHP 5.5+",
   "version" : "0.0.1",
   "require" : {

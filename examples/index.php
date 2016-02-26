@@ -1,5 +1,5 @@
 <?php
-require_once('../src/Core/func.php');
+require_once('../src/func.php');
 
 // $sayJames = partial(function ($a, $b) {
 //     return "Hi, I'm $a $b\n";
