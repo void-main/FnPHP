@@ -36,17 +36,19 @@ function curry($fn) {
     $reflectionFunc = new ReflectionFunction($fn);
     $paramsCount = count($reflectionFunc->getParameters());
     
-    function helper ($argsSoFar, $paramsCount, $fn) {
-        return function () use ($argsSoFar, $paramsCount, $fn) {
-            $newArgs = func_get_args();
-            $wholeArgs = array_merge($argsSoFar, $newArgs);
-            if (count($wholeArgs) >= $paramsCount) {
-                return call_user_func_array($fn, $wholeArgs);
-            } else {
-                return helper($wholeArgs, $paramsCount, $fn);
-            }
-        };
-    };
+    if (!function_exists("VoidMain\\FnPHP\\helper")) {
+        function helper ($argsSoFar, $paramsCount, $fn) {
+            return function () use ($argsSoFar, $paramsCount, $fn) {
+                $newArgs = func_get_args();
+                $wholeArgs = array_merge($argsSoFar, $newArgs);
+                if (count($wholeArgs) >= $paramsCount) {
+                    return call_user_func_array($fn, $wholeArgs);
+                } else {
+                    return helper($wholeArgs, $paramsCount, $fn);
+                }
+            };
+        };        
+    }
     
     return helper([], $paramsCount, $fn);
 }

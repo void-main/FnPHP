@@ -1,4 +1,5 @@
 <?php
+use VoidMain;
 require_once('../src/func.php');
 
 // $sayJames = partial(function ($a, $b) {
@@ -17,3 +18,13 @@ $sayHello("world");
 $curriedTestFunc("say", "test", "all");
 $newSayHello = $curriedTestFunc("say", "hello");
 $newSayHello("world");
+
+
+function sum($a, $b, $c) {
+    return $a + $b + $c;
+}
+
+$curriedSum = VoidMain\FnPHP\curry("sum");
+$sum1 = $curriedSum(1);
+$sum1And2 = $sum1(2);
+echo "Sum to 3 is " . $sum1And2(3);
